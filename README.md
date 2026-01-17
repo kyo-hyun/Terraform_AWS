@@ -10,7 +10,10 @@
 
 ## Security Architecture
 
-이 프로젝트는 Hub & Spoke 모델을 기반으로 한 보안 아키텍처를 가집니다. 외부에서 들어오는 모든 트래픽은 먼저 AWS Network Firewall (NFW)을 통과하여 기본적인 보안 검사를 거칩니다. 그 후, 트래픽은 Application Load Balancer (ALB)로 전달됩니다. ALB는 EKS 클러스터 내의 Ingress Controller를 백엔드로 사용하여 요청을 적절한 서비스로 라우팅합니다. 이 구조는 중앙 집중식 트래픽 필터링과 유연한 서비스 확장을 가능하게 합니다.
+이 프로젝트는 Hub & Spoke 모델을 기반으로 한 보안 아키텍처를 가집니다. 
+외부에서 들어오는 모든 트래픽은 먼저 AWS Network Firewall (NFW)을 통과하여 기본적인 보안 검사를 거칩니다. 
+그 후, 트래픽은 Application Load Balancer (ALB)로 전달됩니다. ALB는 EKS 클러스터 내의 Ingress Controller를 백엔드로 사용하여 요청을 적절한 서비스로 라우팅합니다. 
+이 구조는 중앙 집중식 트래픽 필터링과 유연한 서비스 확장을 가능하게 합니다.
 
 ## Features
 
