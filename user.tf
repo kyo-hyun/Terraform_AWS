@@ -1,12 +1,12 @@
 locals {
   iam_users = {
-    # "sts-user" = {
-    #   policy   = ["AIOpsOperatorAccess","AdministratorAccess","sts"]
-    #   tags = {
-    #     owner = "kim",
-    #     env   = "terraform"
-    #   }
-    # }
+    "sts-user" = {
+      policy   = ["AIOpsOperatorAccess","AdministratorAccess","sts"]
+      tags = {
+        owner = "kim",
+        env   = "terraform"
+      }
+    }
   }
 }
 

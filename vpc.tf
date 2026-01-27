@@ -26,6 +26,12 @@ locals {
           availability_zone       = "ap-northeast-2c"
           map_public_ip_on_launch = "true"
         }
+
+        "test-nfw-snet-a" = {
+          cidr_block              = "10.0.4.0/24"
+          availability_zone       = "ap-northeast-2a"
+          map_public_ip_on_launch = "true"
+        }
       }
     }
   }

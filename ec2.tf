@@ -30,93 +30,93 @@ locals {
       }
     }
 
-    # "ec2-2" = {
-    #   ami               = "ami-0eb302fcc77c2f8bd"
-    #   type              = "t2.micro"
-    #   vpc               = "test-vpc"
-    #   availability_zone = "ap-northeast-2c"
-    #   subnet            = "test-snet-c"
-    #   private_ip        = "10.0.1.5"
-    #   eip               = "eip_test3"
-    #   security_group    = ["ec2-2-sg"]
+    "ec2-2" = {
+      ami               = "ami-0eb302fcc77c2f8bd"
+      type              = "t2.micro"
+      vpc               = "test-vpc"
+      availability_zone = "ap-northeast-2c"
+      subnet            = "test-snet-c"
+      private_ip        = "10.0.1.5"
+      eip               = "eip_test3"
+      security_group    = ["ec2-2-sg"]
 
-    #   user_data         = <<-EOF
-    #                       #!/bin/bash
-    #                       echo "QWERasdf123!!" | passwd ec2-user --stdin
-    #                       sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/g' /etc/ssh/sshd_config
-    #                       systemctl restart sshd
-    #                       yum install -y httpd
-    #                       systemctl restart httpd
-    #                       echo "ap-northeast-2c" >> /var/www/html/index.html
-    #                       EOF
+      user_data         = <<-EOF
+                          #!/bin/bash
+                          echo "QWERasdf123!!" | passwd ec2-user --stdin
+                          sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/g' /etc/ssh/sshd_config
+                          systemctl restart sshd
+                          yum install -y httpd
+                          systemctl restart httpd
+                          echo "ap-northeast-2c" >> /var/www/html/index.html
+                          EOF
 
-    #   root_ebs = {
-    #     root_ebs_type = "gp3"
-    #     root_ebs_size = 30
-    #   }
+      root_ebs = {
+        root_ebs_type = "gp3"
+        root_ebs_size = 30
+      }
 
-    #   add_ebs = {
+      add_ebs = {
 
-    #   }
-    # }
+      }
+    }
 
-    # "ec2-nitron-c5large" = {
-    #   ami               = "ami-0cf1ead55e8259a57"
-    #   type              = "c5.large"
-    #   vpc               = "Hub-vpc"
-    #   availability_zone = "ap-northeast-2a"
-    #   subnet            = "hub-mgmt-snet-a"
-    #   private_ip        = "10.0.3.8"
-    #   eip               = "eip_test4"
-    #   security_group    = ["hub-vpc-sg"]
+    "ec2-nitron-c5large" = {
+      ami               = "ami-0cf1ead55e8259a57"
+      type              = "c5.large"
+      vpc               = "Hub-vpc"
+      availability_zone = "ap-northeast-2a"
+      subnet            = "hub-mgmt-snet-a"
+      private_ip        = "10.0.3.8"
+      eip               = "eip_test4"
+      security_group    = ["hub-vpc-sg"]
 
-    #   user_data         = <<-EOF
-    #                       #!/bin/bash
-    #                       echo "QWERasdf123!!" | passwd ec2-user --stdin
-    #                       sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/g' /etc/ssh/sshd_config
-    #                       systemctl restart sshd
-    #                       yum install -y httpd
-    #                       systemctl restart httpd
-    #                       echo "Hello Terraform" >> /var/www/html/index.html
-    #                       EOF
+      user_data         = <<-EOF
+                          #!/bin/bash
+                          echo "QWERasdf123!!" | passwd ec2-user --stdin
+                          sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/g' /etc/ssh/sshd_config
+                          systemctl restart sshd
+                          yum install -y httpd
+                          systemctl restart httpd
+                          echo "Hello Terraform" >> /var/www/html/index.html
+                          EOF
 
-    #   root_ebs = {
-    #     root_ebs_type = "gp3"
-    #     root_ebs_size = 30
-    #   }
+      root_ebs = {
+        root_ebs_type = "gp3"
+        root_ebs_size = 30
+      }
 
-    #   add_ebs = {
+      add_ebs = {
 
-    #   }
-    # }
+      }
+    }
 
-    # "spoke1-ec2" = {
-    #   ami               = "ami-0eb302fcc77c2f8bd"
-    #   type              = "t2.micro"
-    #   vpc               = "spoke2-vpc"
-    #   availability_zone = "ap-northeast-2a"
-    #   subnet            = "private-ec2-snet"
-    #   private_ip        = "11.0.0.5"
-    #   #eip               = "eip_test2"
-    #   security_group    = ["spoke1-vpc-sg"]
+    "spoke1-ec2" = {
+      ami               = "ami-0eb302fcc77c2f8bd"
+      type              = "t2.micro"
+      vpc               = "spoke2-vpc"
+      availability_zone = "ap-northeast-2a"
+      subnet            = "private-ec2-snet"
+      private_ip        = "11.0.0.5"
+      #eip               = "eip_test2"
+      security_group    = ["spoke1-vpc-sg"]
 
-    #   user_data         = <<-EOF
-    #                       #!/bin/bash
-    #                       echo "QWERasdf123!!" | passwd ec2-user --stdin
-    #                       sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/g' /etc/ssh/sshd_config
-    #                       systemctl restart sshd
-    #                       yum install -y httpd
-    #                       systemctl restart httpd
-    #                       echo "Hello Terraform" >> /var/www/html/index.html
-    #                       EOF
-    #   root_ebs = {
-    #     root_ebs_type = "gp3"
-    #     root_ebs_size = 30
-    #   }
+      user_data         = <<-EOF
+                          #!/bin/bash
+                          echo "QWERasdf123!!" | passwd ec2-user --stdin
+                          sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/g' /etc/ssh/sshd_config
+                          systemctl restart sshd
+                          yum install -y httpd
+                          systemctl restart httpd
+                          echo "Hello Terraform" >> /var/www/html/index.html
+                          EOF
+      root_ebs = {
+        root_ebs_type = "gp3"
+        root_ebs_size = 30
+      }
 
-    #   add_ebs = {
+      add_ebs = {
 
-    #   }
+      }
   }
 }
 
