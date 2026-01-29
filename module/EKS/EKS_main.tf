@@ -9,7 +9,9 @@ resource "aws_eks_cluster" "example" {
   version  = var.eks_version
 
   vpc_config {
-    subnet_ids = var.subnets
+    subnet_ids              = var.subnets
+    endpoint_public_access  = lookup(var.api_access,"public_access",false)
+    endpoint_private_access = lookup(var.api_access,"private_access",false)
   }
 }
 

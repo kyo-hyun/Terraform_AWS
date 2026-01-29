@@ -3,14 +3,6 @@ locals {
     "kim_vpc_igw" = {
       vpc_attach = "test-vpc"
     }
-
-    "spoke1_vpc_igw" = {
-      vpc_attach = "Spoke-vpc-1"
-    }
-
-    "spoke2_vpc_igw" = {
-      vpc_attach = "Spoke-vpc-2"
-    }
   }
 }
 

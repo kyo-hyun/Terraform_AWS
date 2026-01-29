@@ -1,10 +1,6 @@
 locals {
   natgw_list = {
-    "test-nat" = {
-      vpc     = "vpc-hub"
-      subnet  = "A-public-1-sb"
-      eip     = "eip_test3"
-    }
+
   }
 }
 

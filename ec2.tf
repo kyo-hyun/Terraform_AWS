@@ -119,6 +119,7 @@ locals {
       }
   }
 }
+}
 
 module "ec2" {
   source   = "./module/EC2"

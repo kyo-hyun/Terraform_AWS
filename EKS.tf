@@ -5,6 +5,11 @@ locals {
       vpc                 = "test-vpc"
       subnet              = ["test-snet-a","test-snet-c"]
 
+      api_access = {
+        public_access  = true
+        private_access = true
+      }
+
       # cluster role
       cluster_role        = "eks-cluster-role"
 
@@ -37,6 +42,7 @@ module "eks" {
   cluster_role  = module.IAM_Role[each.value.cluster_role].get_role_arn
   access_user   = each.value.access_user
   user_policy   = each.value.user_policy
+  api_access    = each.value.api_access
   node_group     = [for ng_key, ng_value in each.value.node_group : {
     "node_group"      = ng_key
     "node_role"       = module.IAM_Role[ng_value.node_role].get_role_arn

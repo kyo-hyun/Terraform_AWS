@@ -10,6 +10,14 @@ variable "subnets" {
     default = null
 }
 
+variable "api_access" {
+    type    = object({
+        public_access  = bool
+        private_access = bool
+    })
+    default = null
+}
+
 variable "access_user" {
     default = null
 }
