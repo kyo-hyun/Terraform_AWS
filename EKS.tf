@@ -1,6 +1,6 @@
 locals {
   eks_list = {
-    "spoke1-eks" = {
+    "demo-eks" = {
       version             = "1.33"
       vpc                 = "test-vpc"
       subnet              = ["test-snet-a","test-snet-c"]
@@ -12,7 +12,7 @@ locals {
 
       # cluster role
       cluster_role        = "eks-cluster-role"
-
+ 
       # access user
       access_user         = "arn:aws:iam::364010288789:user/tf_user"
       user_policy         = "arn:aws:eks::aws:cluster-access-policy/AmazonEKSClusterAdminPolicy"

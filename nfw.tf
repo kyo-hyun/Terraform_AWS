@@ -1,8 +1,8 @@
 locals {
   nfw_list = {
-    "main-nfw" = {
-      vpc    = "test-vpc"
-      subnet = "test-nfw-snet-a"
+    "demo-nfw" = {
+      vpc    = "demo-vpc"
+      subnet = "demo-a-nfw-public-snet"
 
       stateless_rules = [
         {
