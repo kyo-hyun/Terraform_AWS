@@ -3,8 +3,11 @@ resource "aws_networkfirewall_firewall" "nfw" {
   firewall_policy_arn = aws_networkfirewall_firewall_policy.nfw_policy.arn
   vpc_id              = var.vpc_id
 
-  subnet_mapping {
-    subnet_id = var.subnet_id
+  dynamic "subnet_mapping" {
+    for_each = var.subnet_id
+    content {
+      subnet_id = subnet_mapping.value
+    }
   }
 
   delete_protection                 = false

@@ -2,7 +2,7 @@ locals {
   nfw_list = {
     "demo-nfw" = {
       vpc    = "demo-vpc"
-      subnet = "demo-a-nfw-public-snet"
+      subnet = ["demo-a-nfw-public-snet","demo-c-nfw-public-snet"]
 
       stateless_rules = [
         {
@@ -57,7 +57,7 @@ module "nfw" {
 
   name            = each.key
   vpc_id          = module.vpc[each.value.vpc].get_vpc_id
-  subnet_id       = module.vpc[each.value.vpc].get_subnet_id[each.value.subnet]
+  subnet_id       = [for subnet in each.value.subnet : module.vpc[each.value.vpc].get_subnet_id[subnet]]
   stateless_rules = each.value.stateless_rules
   stateful_rules  = each.value.stateful_rules
 }

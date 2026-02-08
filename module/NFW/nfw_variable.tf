@@ -9,7 +9,7 @@ variable "vpc_id" {
 }
 
 variable "subnet_id" {
-  type = string
+  type = list
   default = null
 }
 
