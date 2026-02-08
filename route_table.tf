@@ -1,6 +1,6 @@
 locals {
   route_table_list = {
-    "demo-ec2-rt" = {
+    "demo-igw-rt" = {
       vpc_id          = "demo-vpc"
       edge_assoc      = "demo-igw"
       routes = {

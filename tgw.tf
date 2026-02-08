@@ -6,12 +6,12 @@ locals {
             "demo_rt" = {
               route = {
                 1 = {
-                    destination_cidr_block = "11.0.0.0/16"
-                    destination_vpc        = "demo-vpc"
+                    destination_cidr_block = "10.100.0.0/16"
+                    destination_vpc        = "spoke1-vpc"
                 }
                 2 = {
-                    destination_cidr_block = "12.0.0.0/16"
-                    destination_vpc        = "demo-vpc"
+                    destination_cidr_block = "10.150.0.0/16"
+                    destination_vpc        = "spoke2-vpc"
                 }
               }
             }
@@ -20,7 +20,7 @@ locals {
               route = {
                 1 = {
                   destination_cidr_block = "10.0.0.0/16"
-                  destination_vpc        = "spoke1-vpc"
+                  destination_vpc        = "demo-vpc"
                 }
               }
             }
@@ -29,7 +29,7 @@ locals {
               route = {
                 1 = {
                   destination_cidr_block = "10.0.0.0/16"
-                  destination_vpc        = "spoke2-vpc"
+                  destination_vpc        = "demo-vpc"
                 }
               }
             }
