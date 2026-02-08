@@ -15,7 +15,7 @@ variable "protocol" {
 }
 
 variable "ec2_id" {
-    type    = map(string)
+    #type    = map(string)
     default = null
 }
 

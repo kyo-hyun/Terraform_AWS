@@ -1,7 +1,15 @@
 locals {
   igw_list = {
-    "kim_vpc_igw" = {
+    "demo-igw" = {
       vpc_attach = "demo-vpc"
+    }
+
+    "spoke1-igw" = {
+      vpc_attach = "spoke1-vpc"
+    }
+
+    "spoke2-igw" = {
+      vpc_attach = "spoke2-vpc"
     }
   }
 }

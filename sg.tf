@@ -1,6 +1,6 @@
 locals {
   security_group_list = {
-    "ec2-1-sg" = {
+    "demo-sg" = {
       vpc_id = "demo-vpc"
       ingress_rule = {
         "in_ssh_allow_home" = {

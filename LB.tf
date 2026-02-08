@@ -1,11 +1,11 @@
 locals {
   LB_List = {
-    "test-alb" = {
+    "demo-alb" = {
       internal              = false
       load_balancer_type    = "application"
-      security_groups       = ["test-sg1"]
-      vpc                   = "vpc-hub"
-      subnets               = ["A-public-1-sb","A-public-2-sb"]
+      security_groups       = ["demo-sg"]
+      vpc                   = "demo-vpc"
+      subnets               = ["demo-a-tgw-private-snet","demo-c-tgw-private-snet"]
       certificate_arn       = "arn:aws:acm:ap-northeast-2:364010288789:certificate/8cce0133-d33c-4b28-99fb-7f53acfef309"
       listener = {
         "http_listener" = {

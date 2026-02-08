@@ -25,3 +25,8 @@ variable "edge_name" {
     type    = string
     default = null
 }
+
+variable "subnet_names" {
+    type    = list
+    default = null
+}

@@ -4,6 +4,8 @@ resource "aws_lb_target_group" "test" {
   protocol = var.protocol
   vpc_id   = var.vpc_id
 
+  target_type = "ip"
+
   health_check {
     path = var.path
     #protocol = var.protocol
@@ -11,8 +13,10 @@ resource "aws_lb_target_group" "test" {
 }
 
 resource "aws_alb_target_group_attachment" "attach_ec2" {
-  for_each         = var.ec2_id
+  for_each         = toset(var.ec2_id)
   target_group_arn = aws_lb_target_group.test.arn
   target_id        = each.value
   port             = var.port
+
+  availability_zone = "all"
 }

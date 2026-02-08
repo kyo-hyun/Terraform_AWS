@@ -3,16 +3,7 @@ locals {
     "eip_nlb" = {
 
     }
-
-    "eip_test2" = {
-
-    }
-
-    "eip_test3" = {
-
-    }
-
-    "eip_test4" = {
+    "eip_ec2_mgmt" = {
 
     }
   }

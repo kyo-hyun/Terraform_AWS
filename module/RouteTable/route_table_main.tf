@@ -18,8 +18,8 @@ resource "aws_route_table" "route_table" {
 
 # route table subnet attach subent
 resource "aws_route_table_association" "rt_subnet_assoc" {
-  for_each       = var.subnet_ids
-  subnet_id      = each.value
+  for_each       = toset(var.subnet_names)
+  subnet_id      = var.subnet_ids[each.value]
   route_table_id = aws_route_table.route_table.id
 }
 
